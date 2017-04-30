@@ -21,15 +21,15 @@
 
 	Diseñadores Gráficos
 		María Fernanda Islas Carbajal 		fer.ic@hotmail.com
-		Pablo Velazquez Martinez				pablo_vmtz@live.com
-		Ronaldo Valdés Mora						ronal_blu271@hotmail.es
+		Pablo Velazquez Martinez		pablo_vmtz@live.com
+		Ronaldo Valdés Mora			ronal_blu271@hotmail.es
 
 	Analista de Negocios	
 		María Fernanda Verduzco Torres 		marifer_verduzco@hotmail.com
 
 	Desarrolladores de Software	
-		Allan Francisco Julián Novoa			allanfrancisco.jn@gmail.com
-		Fabian López Verdugo						fabian.lopezverdugo@gmail.com
+		Allan Francisco Julián Novoa		allanfrancisco.jn@gmail.com
+		Fabian López Verdugo			fabian.lopezverdugo@gmail.com
 		Oscar Alejandro Sanabria Barradas	oscarsanabria28@gmail.com
 
 	©All Rights Reserved 2017
