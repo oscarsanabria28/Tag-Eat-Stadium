@@ -1,0 +1,85 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+<mvc:annotation-driven />
+<mvc:resources mapping="/images/**" location="resources/images/" />
+<mvc:resources mapping="/js/**" location="resources/js/" />
+
+<!-- <context:component-scan base-package="mx.org.joe.web" /> -->
+
+<context:component-scan base-package="ShopingCart.Fabi.Carrito.database" />
+
+<!-- <bean id="userInfo" class="mx.org.joe.web.UserInfoBean" scope="session">
+<aop:scoped-proxy/>
+</bean>
+-->
+
+<bean id="userController" class="ShopingCart.Fabi.Carrito.database.MartUserController"
+scope="singleton">
+</bean>
+
+<bean id="productController" class="ShopingCart.Fabi.Carrito.database.MartProductController"
+scope="singleton">
+</bean>
+
+<bean id="asientoController" class="ShopingCart.Fabi.Carrito.database.MartAsientoController"
+scope="singleton">
+</bean>
+
+<bean id="estadioController" class="ShopingCart.Fabi.Carrito.database.MartEstadioController"
+scope="singleton">
+</bean>
+
+<bean id="tiendaController" class="ShopingCart.Fabi.Carrito.database.MartTiendaController"
+scope="singleton">
+</bean>
+
+<bean id="pedidoController" class="ShopingCart.Fabi.Carrito.database.MartPedidoController"
+scope="singleton">
+</bean>
+
+<bean id="prodPorPedidoController" class="ShopingCart.Fabi.Carrito.database.MartProdPorPedidoController"
+scope="singleton">
+</bean>
+
+
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+<property name="url" value="jdbc:mysql://localhost:3306/carrito"/>
+<property name="username" value="fabi"/>
+<property name="password" value="fabi"/>
+</bean>
+
+
+<bean id="Main" class="ShopingCart.Fabi.Carrito.MainSpringController">
+<!--<property name="userInfoBean" ref="userInfo"></property>-->
+<property name="userController" ref="userController"></property>
+<property name="productController" ref="productController"></property>
+<property name="asientoController" ref="asientoController"></property>
+<property name="estadioController" ref="estadioController"></property>
+<property name="tiendaController" ref="tiendaController"></property>
+<property name="pedidoController" ref="pedidoController"></property>
+<property name="prodPorPedidoController" ref="prodPorPedidoController"></property>
+</bean>
+
+<bean id="viewResolver"
+class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+<property name="viewClass"
+value="org.springframework.web.servlet.view.JstlView" />
+<property name="prefix" value="/resources/pages/" />
+<property name="suffix" value=".jsp" />
+</bean>
+
+</beans>
